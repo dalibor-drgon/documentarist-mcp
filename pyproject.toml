@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "documentator-mcp"
+version = "0.1.0"
+description = "MCP server for storing & retrieving per-symbol code documentation as YAML."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Documentator" }]
+license = { text = "MIT" }
+dependencies = [
+    "mcp>=1.2",
+    "PyYAML>=6.0",
+]
+
+[project.scripts]
+documentator-mcp = "docs_mcp.server:main"
+
+[tool.setuptools.packages.find]
+include = ["docs_mcp*"]
+exclude = ["tests*", "examples*", "prompts*"]

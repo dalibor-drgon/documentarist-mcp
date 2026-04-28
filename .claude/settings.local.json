@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"from docs_mcp.server import mcp; print\\('tools:', sorted\\([t.name for t in __import__\\('asyncio'\\).get_event_loop\\(\\).run_until_complete\\(mcp.list_tools\\(\\)\\)]\\)\\)\")",
+      "Bash(pip install *)",
+      "Bash(python -m py_compile docs_mcp/server.py docs_mcp/storage.py docs_mcp/parser.py docs_mcp/__main__.py)"
+    ]
+  }
+}
